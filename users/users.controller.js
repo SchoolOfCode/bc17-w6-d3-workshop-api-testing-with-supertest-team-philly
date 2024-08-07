@@ -1,5 +1,5 @@
 import * as usersModel from "./users.model.js";
-
+//API Guts
 export async function getUsers(req, res) {
   const username = req.query.username;
   const users = username

@@ -1,7 +1,7 @@
 import express from "express";
 import logger from "morgan";
 import usersRouter from "./users/users.router.js";
-
+// Router acts as a short cut for instructions 
 const app = express();
 
 /**

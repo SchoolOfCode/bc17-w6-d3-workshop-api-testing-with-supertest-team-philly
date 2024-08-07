@@ -1,5 +1,5 @@
 import { pool } from "../db/index.js";
-
+//SQL Insertions 
 export async function getUsers() {
   const data = await pool.query("SELECT * FROM users ORDER BY id;");
   return data.rows;
