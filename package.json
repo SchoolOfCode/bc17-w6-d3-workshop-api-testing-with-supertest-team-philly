@@ -8,11 +8,14 @@
   },
   "devDependencies": {
     "dotenv": "^16.3.1",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "supertest": "^7.0.0",
+    "vitest": "^2.0.5"
   },
   "scripts": {
     "dev": "nodemon -r dotenv/config ./server.js",
-    "db-reset": "node -r dotenv/config ./db/scripts/reset-table.js"
+    "db-reset": "node -r dotenv/config ./db/scripts/reset-table.js",
+    "test": "vitest"
   },
   "type": "module"
 }
