@@ -15,9 +15,10 @@ const response = await request(app).get('/api/health');
 
 
 // assert
-    expect(respose.body).toEqual({
+    expect(response.body).toEqual({
         success: true,
         payload: "API is running correctly"
     });
     expect(response.status).toEqual(200);
+    expect(response.headers ["Content-Type"]).toMatch(/json/);
 });

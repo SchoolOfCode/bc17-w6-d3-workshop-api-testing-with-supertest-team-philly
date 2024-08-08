@@ -38,20 +38,20 @@ Familiarising yourself with an existing codebase is an important skill to practi
 - Install the project's existing dependencies (listed in the `package.json`)✅
   - Why: In this case, the application code uses third party packages, which are listed in the `package.json`. As part of running the tests, the application code will also run (since we'll be testing it) and the application code needs these dependencies to be installed first.
 - Install Vitest and Supertest both as dev dependencies.✅
-  - Why: Vitest and Supertest are third party packages that make it easier to write tests and test HTTP respectively. However, both are only needed during testing and don't need to be included in the final application. Hence, during installation, you can specify that they should be installed as development-only dependencies.
-  - If you're stuck, try to search online for any "getting started" guidance or examples in their respective documentation on how to install them as dev dependencies.
-- Set up a PostgreSQL database so that you've got a connection string to connect with. (For simplicity, you can choose to do this using ElephantSQL or similar providers.) Then create a `.env` file at the root of this repository and within it add a line: DATABASE_URL=REPLACE_ME_WITH_YOUR_CONNECTION_STRING
+  - Why: Vitest and Supertest are third party packages that make it easier to write tests and test HTTP respectively. However, both are only needed during testing and don't need to be included in the final application. Hence, during installation, you can specify that they should be installed as development-only dependencies.✅
+  - If you're stuck, try to search online for any "getting started" guidance or examples in their respective documentation on how to install them as dev dependencies.✅
+- Set up a PostgreSQL database so that you've got a connection string to connect with. (For simplicity, you can choose to do this using ElephantSQL or similar providers.) Then create a `.env` file at the root of this repository and within it add a line: DATABASE_URL=REPLACE_ME_WITH_YOUR_CONNECTION_STRING✅
 
   - Why: The API tests you'll write will send real requests to the API. When the API receives those requests, the code within the request handler will try to speak to a database (since this API uses a database for persistence). Hence, you need a database for testing purposes.
-  - One of the downsides to using an online database provider for a test database is that their service may break occasionally, which would cause these API tests to fail for the wrong reasons (since the API can't connect to the database during the tests). There are alternative approaches that wouldn't involve connecting to a database server across the internet. These approaches can be more reliable for testing, but would require more setup and tooling. So for now, we're keeping things simpler. (If your database does go down during your tests, create another one or use a different provider.)
+  - One of the downsides to using an online database provider for a test database is that their service may break occasionally, which would cause these API tests to fail for the wrong reasons (since the API can't connect to the database during the tests). There are alternative approaches that wouldn't involve connecting to a database server across the internet. These approaches can be more reliable for testing, but would require more setup and tooling. So for now, we're keeping things simpler. (If your database does go down during your tests, create another one or use a different provider.)✅
 
 ### 🎫 Ticket 3 - Test skeleton
 
-Your next task is to create a `users.test.js` file within the `users` folder. Then within the `users.test.js` file, write a bare bones test (the test name can be `"GET /api/health works"` and the test callback can be left empty). Whilst this isn't a useful test yet, it's enough to register the test. Then run Vitest to check it detects the test file and the test passes.
+Your next task is to create a `users.test.js` file within the `users` folder. Then within the `users.test.js` file, write a bare bones test (the test name can be `"GET /api/health works"` and the test callback can be left empty). Whilst this isn't a useful test yet, it's enough to register the test. Then run Vitest to check it detects the test file and the test passes.✅
 
 ### 🎫 Ticket 4 - Make a request with Supertest
 
-Whilst exploring the codebase earlier, you may have noticed a `GET /api/health` endpoint in the `app.js` file. Your next task is to learn how to use Supertest to send a GET request to this API endpoint within the test you started in the previous ticket. Your manager's tied up in a meeting for the next couple of hours, so looks like you and your team will have to figure things out on your own.
+Whilst exploring the codebase earlier, you may have noticed a `GET /api/health` endpoint in the `app.js` file. Your next task is to learn how to use Supertest to send a GET request to this API endpoint within the test you started in the previous ticket. Your manager's tied up in a meeting for the next couple of hours, so looks like you and your team will have to figure things out on your own.✅
 
 Below is an example you've found online at https://www.npmjs.com/package/supertest:
 
